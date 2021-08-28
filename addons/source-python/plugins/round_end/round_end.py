@@ -10,11 +10,8 @@ can_delay = True
 def round_start(args):
 	global can_delay
 	global mydelay
-	ftime = cvar.find_var('mp_freezetime').get_int()
-	rtime = cvar.find_var('mp_roundtime').get_int()
-	rtime = float(rtime * 60.0)
-	rtime = float(rtime + ftime)
-	rtime += 5
+	ftime = cvar.find_var('mp_freezetime').get_float()
+	rtime = cvar.find_var('mp_roundtime').get_float() * 60.0 + ftime + 5.0
 	if can_delay:
 		mydelay = Delay(float(rtime), endRound)
 		print('[Round End]: Timer have been started!')
