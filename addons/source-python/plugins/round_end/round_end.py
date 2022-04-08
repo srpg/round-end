@@ -33,6 +33,6 @@ def round_start(args):
 def endRound():
 	global can_delay
 	Entity.find_or_create('info_map_parameters').fire_win_condition(9)
-	TextMsg('ROUND DRAW', HudDestination.CENTER).send()
+	TextMsg('ROUND DRAW').send()
 	can_delay = True
 	print('[Round End]: Round have been ended!')
