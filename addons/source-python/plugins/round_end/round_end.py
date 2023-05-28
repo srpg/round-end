@@ -25,7 +25,10 @@ def round_start(args):
 			print('[Round End]: Timer have been started!')
 			can_delay = False
 		else:
-			mydelay.cancel()
+			try:
+				mydelay.cancel()
+			except ValueError:
+				pass
 			print('[Round End]: Old timer have cancelled!!')
 			mydelay = Delay(float(rtime), endRound)
 			print('[Round End]: Started new timer!')
